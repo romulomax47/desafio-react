@@ -1,15 +1,14 @@
-
-
 import './App.css'
-
+import {Home} from './pages/Home.pages'
+import { Profile } from './pages/Profile.page'
 function App() {
   
 
   return (
     <div className="App">
       
-      <h1>HELLO WORD</h1>
-     
+      <Home></Home>
+      {/* <Profile></Profile> */}
       
     </div>
   )
