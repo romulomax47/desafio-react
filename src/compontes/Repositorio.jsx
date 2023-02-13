@@ -1,15 +1,14 @@
 import {AiFillStar} from 'react-icons/ai'
 
-export const Repositorio = () =>{
+export const Repositorio = ({repos}) =>{
 
+   console.log(repos)
    return (
       <div>
-         <h3>Nome Repositorio</h3>
 
-         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-            Earum, minus. Numquam amet labore provident obcaecati 
-            molestias dolore dolor tenetur repudiandae illo asperiores, 
-            ex ducimus sunt, delectus rem dolores, libero doloremque.</p>
+         <h3>{repos.name}</h3>
+
+         <p>{repos.description}</p>
 
           <div>
             <AiFillStar/>

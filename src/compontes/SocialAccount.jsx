@@ -6,20 +6,20 @@ import { CgWebsite } from 'react-icons/cg'
 
 
 const socialAccountIcons = {
-   organizarion: <GrOrganization/>,
-   location : <GoLocation/>,
-   email: <AiOutlineMail/>,
-   webSit: <CgWebsite/>,
-   twitter: <AiOutlineTwitter/>
+   organizarion: <GrOrganization />,
+   location: <GoLocation />,
+   email: <AiOutlineMail />,
+   webSit: <CgWebsite />,
+   twitter: <AiOutlineTwitter />
 }
 
 export const SocialAccounts = (props) => {
    return (
       <div className='card-social-links'>
-           <div>
-               {socialAccountIcons[props.icon]}
-           </div>
-          <a href="#">{props.social}</a>
+  
+         {socialAccountIcons[props.icon]}
+
+         <a href="#">{props.social}</a>
       </div>
    )
 

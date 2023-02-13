@@ -76,16 +76,43 @@ aside{
    padding: 10px 15px;
 }
 .img-profile {
-   width: 200px;
+   width: 150px;
+}
+
+aside  p{
+   font-size: 15px;
+}
+
+aside .card-follwer{
+   display: flex;
+   flex-direction: row;
+   gap: 1rem;
+
+   margin-block: 1rem;
+}
+aside a {
+   font-size: 15px;
+   color: white;
+   text-decoration: none;
+
 }
 
 .card-social-links{
 
-   height: 30px;
+   height: fit-content;
    display: flex;
    flex-direction: row;
    align-items: center;
-   /* justify-content: center; */
+   gap: 1rem;
+   margin-top: 0.5rem;
+   padding: 3px 5px;
+   border: 1px solid #ededed;
+   border-radius: 8px;
+   cursor: pointer;
+}
+
+.card-social-links:hover{
+   background-color: black;
 }
 section{
    height: 100%;
@@ -94,4 +121,5 @@ section{
    padding: 30px;
 
    overflow: auto;
+   
 }

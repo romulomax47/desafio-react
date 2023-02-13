@@ -2,44 +2,47 @@ import { Button } from '../compontes/Button';
 import { SocialAccounts } from '../compontes/SocialAccount';
 import {Repositorio} from '../compontes/Repositorio'
 
+/// icons 
+import { AiOutlineStar, AiOutlineHeart } from 'react-icons/ai'
+import { GiShadowFollower } from 'react-icons/gi'
 
-export const Profile = () => {
+export const Profile = ({}) => {
 
    return (
       <div className="page-profile">
          <aside>
             <div>
-               <img className="img-profile" src="https://avatars.githubusercontent.com/u/99984663?v=4" alt="" />
+               {/* <img className="img-profile" src={value.avatar_url} alt={`foto do ${value.name}`} /> */}
             </div>
 
-            <h2>Romulomax</h2>
-            <a href="#">@romulomax</a>
+            {/* <h2>{value.name}</h2> */}
+            {/* <a href="#">@romulomax</a> */}
 
             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-               Harum nesciunt blanditiis cum. Voluptates, architecto
-               velit necessitatibus accusamus ipsa aliquam nam, doloribus
-               natus, ipsam repudiandae distinctio mollitia? Dolorum voluptatibus officiis doloremque.
+              {/* {data.bio} */}
             </p>
 
-            <div>
+            <div className='card-follwer'>
                <div>
-                  {/* //icon */}
-                  <span>follwers</span>
+                  <GiShadowFollower/>
+                 <b>follores</b>
+                  {/* <span>{data.followers}</span> */}
                </div>
                <div>
-                  {/* //icon */}
-                  <span>follwers</span>
+                  <AiOutlineHeart/>
+                  <span>follwing</span>
                </div>
                <div>
-                  {/* //icon */}
+                  <AiOutlineStar/>
                   <span>stars</span>
                </div>
             </div>
+
+
             <div className='conatinerSocialLinks'>
                <SocialAccounts social='organization' icon='organizarion' />
                <SocialAccounts social='location' icon='location' />
-               <SocialAccounts social='email' icon='email' />
+               {/* <SocialAccounts social= {data.blog} icon='email' /> */}
                <SocialAccounts social='webSit' icon='webSit' />
                <SocialAccounts social='twitter' icon='twitter' />
 
@@ -50,24 +53,15 @@ export const Profile = () => {
             <Button text='Volta'></Button>
 
          </aside>
-         <section>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-               <Repositorio/>
-         </section>
+         {/* <section>
+
+           
+            {repos.map((item, idx) => {
+               return <Repositorio repos = {item} key= {idx}/>
+            })}
+               
+               
+         </section> */}
 
       </div>
    )

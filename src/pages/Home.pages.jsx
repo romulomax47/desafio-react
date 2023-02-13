@@ -1,25 +1,7 @@
-import { useState } from 'react'
+
 import { Button } from '../compontes/Button'
-import { getUser } from '../api/api.api'
 
-export const Home = (props) => {
-
-   const [user, setUser] = useState('')
-
-   const handleUser = (e) => {
-      setUser(e.target.value)
-   }
-
-   const getUserdata = async (e) => {
-      e.preventDefault()
-      if(user.length === 0){
-         return alert('Preecha o pampo')
-      }
-
-      const dataUser = await getUser(user);
-      console.log(dataUser)
-
-   }
+export const Home = ({getUserAPI, handleUser, user}) => {
 
    return (
       <div className='home'>
@@ -28,13 +10,13 @@ export const Home = (props) => {
          <form action="/profile">
             <div className='form'>
                <label htmlFor=""></label>
-               <input type="text" 
-                      name="user" 
-                      id="user"  
-                      placeholder='Username'
-                      value={user}
-                      onChange={handleUser}/>
-               <Button text='Buscar' submit = {getUserdata}></Button>
+               <input type="text"
+                  name="user"
+                  id="user"
+                  placeholder='Username'
+                  value = {user}
+                  onChange = {handleUser} />
+               <Button text='Buscar' getUserAPI={getUserAPI}></Button>
             </div>
 
          </form>

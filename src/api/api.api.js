@@ -1,33 +1,26 @@
 
+import axios from 'axios'
 
-export async function getUser(user){
-    
-   try {
-      const dataUser = await  fetch(`https://api.github.com/users/${user}`);
-      const data = await dataUser.json();
-
-      return data
-      
-   } catch (error) {
-     return error
-   }
-
-    
-
-}
+export const getUser = axios.create({
+   baseURL: `https://api.github.com/users/`,
+   timeout: 3000,
+});
 
 
+export const getUserRepos = axios.create({
+   baseURL: `https://api.github.com/users/`,
+   timeout: 3000,
+});
+// export async function getUserRepos(user) {
+//    try {
+//       const reposUser = await fetch(`https://api.github.com/users/${user}/repos`)
+//       const repos = await reposUser.json()
+//       return repos
 
-export async function getUserRepos(user){
-   try {
-      const reposUser = await fetch(`https://api.github.com/users/${user}/repos`)
-      const repos = await reposUser.json()
-      return repos
-      
-   } catch (error) {
-      
-   }
-   
+//    } catch (error) {
 
-}
+//    }
+
+
+// }
 
