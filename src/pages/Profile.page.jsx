@@ -36,7 +36,7 @@ export const Profile = ({data, repos}) => {
               
             </div>
 
-
+            <hr className='bg-gray-600 mt-2' />
             <div className='conatinerSocialLinks'>
                <SocialAccounts social='organization' icon='organizarion' />
                <SocialAccounts social= {data.location} icon='location' />
