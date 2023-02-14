@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { AiFillStar } from 'react-icons/ai'
 
 export const Repositorio = ({ repos }) => {
@@ -5,15 +6,21 @@ export const Repositorio = ({ repos }) => {
    return (
       <div>
 
-         <h3 className='name-repo'>Nome do repositorio</h3>
+         <h3 className='name-repo'>{repos.name}</h3>
 
-         <p>Descrião do repositorio</p>
+         {repos.description == null ? <Fragment/>: 
+            <p>{repos.description}</p>
 
-         <div>
+         }
+
+         <div className='flex'>
             <AiFillStar />
-            <span>star</span>
+            <b>Stars</b>
+            <span>{repos.watchers_count}</span>
 
-            <span>Updated 30 days ago</span>
+       
+
+            <a href={repos.html_url} target="_blank">Abrir repositório</a>
          </div>
       </div>
    )
