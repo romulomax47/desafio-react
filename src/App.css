@@ -4,7 +4,7 @@
    box-sizing: border-box;
 }
 
-body{
+body {
    font-family: 'Roboto', sans-serif;
    width: 100%;
    height: 100vh;
@@ -18,8 +18,9 @@ body{
 
 }
 
-.home{
-   text-align: center;
+.home {
+   background-color: #121212;
+   color: white;
    height: 100vh;
    display: flex;
    flex-direction: column;
@@ -27,77 +28,126 @@ body{
    justify-content: center;
 }
 
-.form{
-   margin-top: 1rem;
-   display: flex;
+fieldset {
+   width: min(500px, 100%);
+
+   padding: 15px 20px;
+
+   display: flex; 
    flex-direction: row;
-   gap: 1rem;
+   align-items: center;
+   justify-content: center;
+   justify-content: center;
+   gap: 10px;
+}
+fieldset > legend {
+   font-size: 25px;
 }
 
-.form input{
-   padding: 0 5px;
+input {
+   width: 100%;
+   height: 30px;
+   border-radius: 10px;
+   padding: 3px 8px;
    border: 8px;
+
+   font-size: 20px;
+   font-weight: bolder;
+
 }
 
-.form input:focus{
+.form input:focus {
    outline: 0;
+   font-size: 20px;
+   font-weight: bolder;
+
 }
 
-.btn{
+form .btn-seach {
    display: flex;
    align-items: center;
+   height: fit-content;
+   padding: 8px 10px;
+   border-radius: 10px;
+   border: none;
 
-  width: fit-content;
-  padding: 8px 10px;
-  border-radius: 8px;
-  border: none;
-  background-color: none;
-  cursor: pointer;
+   font-weight: bolder;
+   text-transform: uppercase;
+   cursor: pointer;
+
+
 }
 
-.btn-seach{
+form .btn-seach:hover {
    background-color: #333;
-   color: white;
+   color:white;
 }
-.page-profile{
+
+
+.page-profile {
    width: 100%;
    height: 100vh;
 
    display: flex;
 
    overflow: hidden;
-   
+
 }
-aside{
+
+aside {
    width: 300px;
-   /* height: 100vh; */
-   background-color: #333;
-   color: white;
+
+   background-color: #000000;
+   color: rgba(255, 255, 255, .7);
    padding: 10px 15px;
+
+   border-right: 0.5px solid #ededed;
 }
+
+aside .img {
+   text-align:
+      center;
+}
+
 .img-profile {
-   width: 150px;
+   width: 100px;
 }
 
-aside  p{
+aside p {
    font-size: 15px;
+
 }
 
-aside .card-follwer{
+aside .card-follwer {
    display: flex;
    flex-direction: row;
    gap: 1rem;
 
    margin-block: 1rem;
 }
+
+aside .card-follwer div {
+   display: flex;
+   align-items: center;
+   gap: 7px;
+   font-size: 15px;
+}
+
 aside a {
    font-size: 15px;
-   color: white;
+   color: rgba(255, 255, 255, .7);
    text-decoration: none;
 
 }
 
-.card-social-links{
+aside a:hover {
+
+   color: rgba(255, 255, 255, 1);
+   text-decoration: none;
+
+}
+
+.card-social-links {
 
    height: fit-content;
    display: flex;
@@ -106,20 +156,64 @@ aside a {
    gap: 1rem;
    margin-top: 0.5rem;
    padding: 3px 5px;
-   border: 1px solid #ededed;
+   /* border: 1px solid #ededed; */
    border-radius: 8px;
    cursor: pointer;
 }
 
-.card-social-links:hover{
-   background-color: black;
+.btn-voltar {
+   background-color: #ededed;
+   color: black;
+   width: 100%;
+   /* margin-top: .5rem; */
+
+   text-align: center;
+   font-weight: bolder;
 }
-section{
+
+section {
    height: 100%;
    width: 100%;
-
-   padding: 30px;
+   padding: 20px;
+   color: rgba(255, 255, 255, .7);
+   background-color: #121212;
 
    overflow: auto;
+
+}
+
+section>div {
+   border: 1px solid rgba(255, 255, 255, .7);
+   padding: 15px;
+   border-radius: 10px;
+
+   margin-bottom: 20px;
+}
+
+section .name-repo {
+
+   margin-bottom: 1rem;
+}
+
+section .name-repo+p {
+
+   margin-bottom: 1rem;
+}
+
+/* HOME */
+
+@media(max-width:500px){
+   .home{
+      width: 100%;
+   }
+   fieldset {
+      font-size: 90%;
+      flex-direction: column;
+      margin: 0 10px;
+      width: fit-content;
+   
+   }
+
+
    
 }

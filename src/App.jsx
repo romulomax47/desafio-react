@@ -22,8 +22,10 @@ function App() {
       const response = await getUserRepos.get(`/${user}/repos`)
 
       setDataUser(data)
-      setRepos(response.data)
-      // console.log('respos', response.data)
+      setRepos(response.data);
+      
+      console.log('data',data)
+      console.log('respos', response.data)
 
     } catch (error) {
       alert('Usuario não encontrado')

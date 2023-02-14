@@ -1,21 +1,20 @@
-import {AiFillStar} from 'react-icons/ai'
+import { AiFillStar } from 'react-icons/ai'
 
-export const Repositorio = ({repos}) =>{
+export const Repositorio = ({ repos }) => {
 
-   console.log(repos)
    return (
       <div>
 
-         <h3>{repos.name}</h3>
+         <h3 className='name-repo'>Nome do repositorio</h3>
 
-         <p>{repos.description}</p>
+         <p>Descrião do repositorio</p>
 
-          <div>
-            <AiFillStar/>
+         <div>
+            <AiFillStar />
             <span>star</span>
 
             <span>Updated 30 days ago</span>
-          </div>
+         </div>
       </div>
    )
 }
