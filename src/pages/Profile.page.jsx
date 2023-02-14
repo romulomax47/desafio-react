@@ -1,7 +1,6 @@
 import { Button } from '../compontes/Button';
 import { SocialAccounts } from '../compontes/SocialAccount';
 import { Repositorio } from '../compontes/Repositorio'
-
 /// icons 
 import { RiUserFollowLine } from 'react-icons/ri'
 import { GiShadowFollower } from 'react-icons/gi'
@@ -18,7 +17,6 @@ export const Profile = ({data, repos}) => {
             <h2 className='text-gray-900 font-extrabold'>{data.name}</h2>
             
             <p className='text-sm mb-2'>
-               {/* BIO */}
                {data.bio}
             </p>
 
@@ -38,21 +36,16 @@ export const Profile = ({data, repos}) => {
 
             <hr className='bg-gray-600 mt-2' />
             <div className='conatinerSocialLinks'>
-               <SocialAccounts social='organization' icon='organizarion' />
-               <SocialAccounts social= {data.location} icon='location' />
-               <SocialAccounts social='Email' icon='email' />
-               <SocialAccounts social='webSit' icon='webSit' />
-               <SocialAccounts social='twitter' icon='twitter' />
-
-
-
+               <SocialAccounts social= {data.company} name = 'Company' icon='organizarion' />
+               <SocialAccounts name = {data.location} icon='location'/>
+               <SocialAccounts social= {data.email}  name ='Email'  icon = 'email'/>
+               <SocialAccounts social= {data.blog} name = 'Blog' icon='webSit' />
+               <SocialAccounts social= {data.twitter_username} name = 'Twitter' icon='twitter' />
             </div>
-
-            <Button text='Volta'></Button>
 
          </aside>
 
-         <section>
+         <section className='h-screen w-full overflow-auto py-4 px-3'>
             {repos.map((repositorio, idx) => {
                return <Repositorio repos = {repositorio} key = {idx} />
             })}

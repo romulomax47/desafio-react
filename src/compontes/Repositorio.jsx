@@ -4,24 +4,27 @@ import { AiFillStar } from 'react-icons/ai'
 export const Repositorio = ({ repos }) => {
 
    return (
-      <div>
+      <section className='mb-4 px-3 py-4 border-2 border-gray-800 rounded-xl'>
 
-         <h3 className='name-repo'>{repos.name}</h3>
+         <h3 className='text-xl text-gray-900 font-extrabold mb-2'>{repos.name}</h3>
 
          {repos.description == null ? <Fragment/>: 
             <p>{repos.description}</p>
 
          }
 
-         <div className='flex'>
+         <div className='flex items-center gap-3'>
+            <div className='flex items-center gap-2'>
             <AiFillStar />
             <b>Stars</b>
             <span>{repos.watchers_count}</span>
 
+            </div>
+
        
 
-            <a href={repos.html_url} target="_blank">Abrir repositório</a>
+            <a className='font-medium hover:text-gray-900' href={repos.html_url} target="_blank">Abrir repositório</a>
          </div>
-      </div>
+      </section>
    )
 }
