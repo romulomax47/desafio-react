@@ -15,7 +15,7 @@ const socialAccountIcons = {
 
 export const SocialAccounts = (props) => {
    return (
-      <div className='card-social-links'>
+      <div className='flex items-center gap-2 mt-4 text-gray-900 font-extrabold hover:text-gray-400'>
          
          {socialAccountIcons[props.icon]}
 

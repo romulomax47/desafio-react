@@ -9,29 +9,29 @@ import { GiShadowFollower } from 'react-icons/gi'
 export const Profile = ({data, repos}) => {
    console.log(data)
    return (
-      <div className="page-profile">
-         <aside>
-            <div className='img'>
-               <img className="img-profile" src= {data.avatar_url} alt={`foto do romulo`} />
+      <div className="h-screen bg-gray-500 overflow-hidden flex">
+         <aside className='bg-gray-700 text-white w-max py-3 px-4' >
+            <div className='text-center'>
+               <img className="w-36" src= {data.avatar_url} alt={`foto do romulo`} />
             </div>
 
-            <h2>{data.name}</h2>
+            <h2 className='text-gray-900 font-extrabold'>{data.name}</h2>
             
-            <p>
+            <p className='text-sm mb-2'>
                {/* BIO */}
                {data.bio}
             </p>
 
             <div className='card-follwer'>
-               <div>
+               <div className='flex items-center gap-2'>
                   <GiShadowFollower />
-                  <b>followers</b>
-                  <span>{data.followers}</span>
+                  <b className='text-gray-900'>followers</b>
+                  <span className='text-gray-900 font-extrabold'>{data.followers}</span>
                </div>
-               <div>
+               <div className='flex items-center gap-2'>
                   <RiUserFollowLine />
-                  <b>following</b>
-                  <span>{data.following}</span>
+                  <b className='text-gray-900'>following</b>
+                  <span className='text-gray-900 font-extrabold'>{data.following}</span>
                </div>
               
             </div>
