@@ -1,7 +1,7 @@
-import './App.css'
+import './style.css'
 import { Home } from './pages/Home.pages'
 import { Profile } from './pages/Profile.page'
-import { BrowserRouter, Routes, Route, redirect } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { useState } from 'react'
 //  api 
 import { getUser, getUserRepos } from './api/api.api';
@@ -24,17 +24,17 @@ function App() {
       setRepos(response.data);
 
       console.log('data', data)
-      console.log('respos', response.data)
+      console.log('respos', response.data);
 
       /// redirecionar para pagina profile;
-      redirect('profile')
+      <Link to='/profile'>s</Link>
 
 
     } catch (error) {
       alert('Usuario não encontrado')
     }
 
-    return redirect("/profile");
+    // return redirect("/profile");
 
   }
 
@@ -43,30 +43,28 @@ function App() {
   }
 
   return (
+
+
+
     <BrowserRouter>
       <div className="App">
-        <Routes>
+        {dataUser.length === 0 ?
+          <Home
+            getUserAPI={getUserAPI}
+            handleUser={handleUser}
+            user={user} />
 
-          <Route path='/'
-            element={<Home
-              getUserAPI={getUserAPI}
-              handleUser={handleUser}
-              user={user} />}>
 
-          </Route>
+          :
+          <Profile
+            data={dataUser}
+            repos={repos}
+            value={user}
+          />
+        }
 
-          <Route path='/profile'
-            element={<Profile
-              data={dataUser}
-              repos={repos}
-              value={user}
-              dataUSer={dataUser}
-              reposUser={repos}
-            />}>
 
-          </Route>
 
-        </Routes>
       </div>
     </BrowserRouter >
 
