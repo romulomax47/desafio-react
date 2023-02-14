@@ -3,45 +3,43 @@ import { SocialAccounts } from '../compontes/SocialAccount';
 import { Repositorio } from '../compontes/Repositorio'
 
 /// icons 
-import { AiOutlineStar, AiOutlineHeart } from 'react-icons/ai'
+import { RiUserFollowLine } from 'react-icons/ri'
 import { GiShadowFollower } from 'react-icons/gi'
 
-export const Profile = ({dataUser, repos}) => {
-
+export const Profile = ({data, repos}) => {
+   console.log(data)
    return (
       <div className="page-profile">
          <aside>
             <div className='img'>
-               <img className="img-profile" src={dataUser.avatar_url} alt={`foto do romulo`} />
+               <img className="img-profile" src= {data.avatar_url} alt={`foto do romulo`} />
             </div>
 
-            <h2>{dataUser.name}</h2>
+            <h2>{data.name}</h2>
             
             <p>
                {/* BIO */}
-               {dataUser.bio}
+               {data.bio}
             </p>
 
             <div className='card-follwer'>
                <div>
                   <GiShadowFollower />
-                  <b>follores</b>
-                  <span>2</span>
+                  <b>followers</b>
+                  <span>{data.followers}</span>
                </div>
                <div>
-                  <AiOutlineHeart />
-                  <span>follwing</span>
+                  <RiUserFollowLine />
+                  <b>following</b>
+                  <span>{data.following}</span>
                </div>
-               <div>
-                  <AiOutlineStar />
-                  <span>stars</span>
-               </div>
+              
             </div>
 
 
             <div className='conatinerSocialLinks'>
                <SocialAccounts social='organization' icon='organizarion' />
-               <SocialAccounts social='location' icon='location' />
+               <SocialAccounts social= {data.location} icon='location' />
                <SocialAccounts social='Email' icon='email' />
                <SocialAccounts social='webSit' icon='webSit' />
                <SocialAccounts social='twitter' icon='twitter' />
@@ -55,23 +53,11 @@ export const Profile = ({dataUser, repos}) => {
          </aside>
 
          <section>
-
-
-
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-            <Repositorio/>
-
-
+            {repos.map((repositorio, idx) => {
+               return <Repositorio repos = {repositorio} key = {idx} />
+            })}
+            
+            
 
          </section>
 
