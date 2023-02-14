@@ -10,7 +10,6 @@ function App() {
   const [user, setUser] = useState('');
   const [dataUser, setDataUser] = useState([]);
   const [repos, setRepos] = useState([]);
-  console.log(dataUser)
 
 
   const getUserAPI = async () => {
@@ -24,8 +23,12 @@ function App() {
       setDataUser(data)
       setRepos(response.data);
 
-      console.log('data',data)
+      console.log('data', data)
       console.log('respos', response.data)
+
+      /// redirecionar para pagina profile;
+      redirect('profile')
+
 
     } catch (error) {
       alert('Usuario não encontrado')
@@ -57,8 +60,8 @@ function App() {
               data={dataUser}
               repos={repos}
               value={user}
-              dataUSer = {dataUser}
-              reposUser = {repos}
+              dataUSer={dataUser}
+              reposUser={repos}
             />}>
 
           </Route>

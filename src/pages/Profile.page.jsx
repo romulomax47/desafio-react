@@ -6,19 +6,20 @@ import { Repositorio } from '../compontes/Repositorio'
 import { AiOutlineStar, AiOutlineHeart } from 'react-icons/ai'
 import { GiShadowFollower } from 'react-icons/gi'
 
-export const Profile = ({ }) => {
+export const Profile = ({dataUser, repos}) => {
 
    return (
       <div className="page-profile">
          <aside>
             <div className='img'>
-               <img className="img-profile" src={`https://avatars.githubusercontent.com/u/99984663?v=4`} alt={`foto do romulo`} />
+               <img className="img-profile" src={dataUser.avatar_url} alt={`foto do romulo`} />
             </div>
 
-            <h2>Romulo Max</h2>
-
+            <h2>{dataUser.name}</h2>
+            
             <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci labore possimus nesciunt unde? Iusto similique perferendis temporibus fuga accusamus. Deleniti soluta fugit expedita beatae ea reprehenderit dolor dolores fugiat nisi!
+               {/* BIO */}
+               {dataUser.bio}
             </p>
 
             <div className='card-follwer'>
