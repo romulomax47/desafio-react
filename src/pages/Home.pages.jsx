@@ -4,7 +4,7 @@ import { Button } from '../compontes/Button'
 export const Home = ({ getUserAPI, handleUser, user }) => {
 
    return (
-      <div className='home'>
+      <div className='bg-black'>
          {/* <h1>Seach Devs</h1> */}
 
          <div className='form'>

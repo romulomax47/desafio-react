@@ -1,4 +1,5 @@
 import './style.css'
+
 import { Home } from './pages/Home.pages'
 import { Profile } from './pages/Profile.page'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
@@ -48,6 +49,7 @@ function App() {
 
     <BrowserRouter>
       <div className="App">
+  
         {dataUser.length === 0 ?
           <Home
             getUserAPI={getUserAPI}
