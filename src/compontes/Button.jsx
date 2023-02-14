@@ -9,7 +9,7 @@ export const Button = (props) => {
 
    return (
       <div>
-         <button type='button' className="btn btn-seach btn-voltar" onClick={props.getUserAPI}>
+         <button type='button' className="h-full p-2 rounded-xl flex items-center justify-center bg-gray-700 hover:bg-gray-900 hover:text-white font-black" onClick={props.getUserAPI}>
             {props.text === 'Buscar' ? <AiOutlineSearch style={{fontSize:20, marginRight:10}} /> : ''}
             {/* <Link to = {'/profile'}> */}
             {props.text}

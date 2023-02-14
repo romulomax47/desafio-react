@@ -1,8 +1,8 @@
-import './style.css'
+import './Style.css'
 
 import { Home } from './pages/Home.pages'
 import { Profile } from './pages/Profile.page'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Link } from 'react-router-dom'
 import { useState } from 'react'
 //  api 
 import { getUser, getUserRepos } from './api/api.api';
@@ -48,10 +48,10 @@ function App() {
 
 
     <BrowserRouter>
-      <div className="App">
+      <div className="App w-full h-full">
   
         {dataUser.length === 0 ?
-          <Home
+          <Home 
             getUserAPI={getUserAPI}
             handleUser={handleUser}
             user={user} />
