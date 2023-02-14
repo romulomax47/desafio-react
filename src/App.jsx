@@ -4,7 +4,7 @@ import { Profile } from './pages/Profile.page'
 import { BrowserRouter, Routes, Route, redirect } from 'react-router-dom'
 import { useState } from 'react'
 //  api 
-import { getUser, getUserRepos } from './api/api.api'
+import { getUser, getUserRepos } from './api/api.api';
 function App() {
 
   const [user, setUser] = useState('');
@@ -23,7 +23,7 @@ function App() {
 
       setDataUser(data)
       setRepos(response.data);
-      
+
       console.log('data',data)
       console.log('respos', response.data)
 
@@ -57,6 +57,8 @@ function App() {
               data={dataUser}
               repos={repos}
               value={user}
+              dataUSer = {dataUser}
+              reposUser = {repos}
             />}>
 
           </Route>
