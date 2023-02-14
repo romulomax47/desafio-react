@@ -1,4 +1,4 @@
-import { Button } from '../compontes/Button';
+
 import { SocialAccounts } from '../compontes/SocialAccount';
 import { Repositorio } from '../compontes/Repositorio'
 /// icons 
