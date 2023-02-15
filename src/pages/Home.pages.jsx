@@ -1,5 +1,4 @@
-
-import { Button } from '../compontes/Button'
+import { AiOutlineSearch } from 'react-icons/ai'
 
 export const Home = ({ handleSeachUser, handleUser, user }) => {
 
@@ -8,7 +7,7 @@ export const Home = ({ handleSeachUser, handleUser, user }) => {
          {/* <h1>Seach Devs</h1> */}
 
          <div className='form'>
-            <form action="/profile" method='#'>
+            <form action="/profile" method='#' onSubmit={handleSeachUser}>
 
                <h1 className='text-3xl text-center mb-7'>Seach Devs</h1>
                <div className='flex justify-center items-center gap-2 mb-7'>
@@ -20,7 +19,10 @@ export const Home = ({ handleSeachUser, handleUser, user }) => {
                      placeholder='Username'
                      value={user}
                      onChange={handleUser} />
-                  <Button text='Buscar' handleSeachUser = {handleSeachUser}></Button>
+                     <button className="h-full p-2 rounded-xl flex items-center justify-center gap-1 bg-gray-700 hover:bg-gray-900 hover:text-white font-black">
+                        <AiOutlineSearch style={{fontSize:25}}/>
+                        Buscar
+                     </button>
                </div>
 
 

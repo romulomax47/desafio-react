@@ -4,10 +4,10 @@ import { Home } from './pages/Home.pages'
 import { Profile } from './pages/Profile.page'
 import { BrowserRouter, Link } from 'react-router-dom'
 import { useState } from 'react'
-//  api 
-import { getUser, getUserRepos } from './api/api.api';
-
 import order from './utils/order'
+//  api 
+
+import { searchUser, searchUserRepos } from './api/search';
 function App() {
 
   const [user, setUser] = useState('');
@@ -15,13 +15,14 @@ function App() {
   const [repos, setRepos] = useState([]);
 
 
-  const handleSeachUser = async () => {
-
+  const handleSeachUser = async (e) => {
+    e.preventDefault();
+    
     if (!user) return alert('Digite um usuario')
 
     try {
-      const { data } = await getUser.get(`/${user}`)
-      const response = await getUserRepos.get(`/${user}/repos`)
+      const { data } = await searchUser.get(`/${user}`);
+      const response = await searchUserRepos.get(`/${user}/repos`);
       const repos = order(response.data);
 
       setDataUser(data)
