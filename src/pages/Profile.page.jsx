@@ -4,18 +4,19 @@ import { Repositorio } from '../compontes/Repositorio'
 /// icons 
 import { RiUserFollowLine } from 'react-icons/ri'
 import { GiShadowFollower } from 'react-icons/gi'
+// import { AiOutlineSearch } from 'react-icons/ai'
 
-export const Profile = ({data, repos}) => {
-   console.log(data)
+export const Profile = ({ data, repos }) => {
+
    return (
       <div className="h-screen bg-gray-500 overflow-hidden flex">
          <aside className='bg-gray-700 text-white w-max py-3 px-4' >
             <div className='text-center'>
-               <img className="w-36" src= {data.avatar_url} alt={`foto do romulo`} />
+               <img className="w-36" src={data.avatar_url} alt={`foto do(a) ${data.name}`} />
             </div>
 
             <h2 className='text-gray-900 font-extrabold'>{data.name}</h2>
-            
+
             <p className='text-sm mb-2'>
                {data.bio}
             </p>
@@ -31,26 +32,30 @@ export const Profile = ({data, repos}) => {
                   <b className='text-gray-900'>following</b>
                   <span className='text-gray-900 font-extrabold'>{data.following}</span>
                </div>
-              
+
             </div>
 
             <hr className='bg-gray-600 mt-2' />
             <div className='conatinerSocialLinks'>
-               <SocialAccounts social= {data.company} name = 'Company' icon='organizarion' />
-               <SocialAccounts name = {data.location} icon='location'/>
-               <SocialAccounts social= {data.email}  name ='Email'  icon = 'email'/>
-               <SocialAccounts social= {data.blog} name = 'Blog' icon='webSit' />
-               <SocialAccounts social= {data.twitter_username} name = 'Twitter' icon='twitter' />
+               <SocialAccounts social={data.company} name='Company' icon='organizarion' />
+               <SocialAccounts name={data.location} icon='location' />
+               <SocialAccounts social={data.email} name='Email' icon='email' />
+               <SocialAccounts social={data.blog} name='Blog' icon='webSit' />
+               <SocialAccounts social={data.twitter_username} name='Twitter' icon='twitter' />
             </div>
 
+            {/* <button className="mt-3 p-2 w-full rounded-xl flex items-center justify-center gap-1 bg-gray-900 hover:bg-gray-800 hover:text-white font-black">
+               <AiOutlineSearch style={{ fontSize: 25 }} />
+               Voltar
+            </button> */}
          </aside>
 
          <section className='h-screen w-full overflow-auto py-4 px-3'>
             {repos.map((repositorio, idx) => {
-               return <Repositorio repos = {repositorio} key = {idx} />
+               return <Repositorio repos={repositorio} key={idx} />
             })}
-            
-            
+
+
 
          </section>
 
