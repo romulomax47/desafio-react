@@ -10,7 +10,6 @@ export const Repositorio = ({ repos }) => {
 
          {repos.description == null ? <Fragment/>: 
             <p>{repos.description}</p>
-
          }
 
          <div className='flex items-center gap-3'>
@@ -20,9 +19,7 @@ export const Repositorio = ({ repos }) => {
             <span>{repos.watchers_count}</span>
 
             </div>
-
-       
-
+      
             <a className='font-medium hover:text-gray-900' href={repos.html_url} target="_blank">Abrir repositório</a>
          </div>
       </section>
