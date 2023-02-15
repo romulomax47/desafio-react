@@ -3,7 +3,7 @@ import { FcOrganization } from 'react-icons/fc'
 import { GoLocation } from 'react-icons/go'
 import { AiOutlineMail, AiOutlineTwitter } from 'react-icons/ai'
 import { CgWebsite } from 'react-icons/cg'
-import { Fragment } from 'react'
+
 
 
 const socialAccountIcons = {
@@ -14,16 +14,18 @@ const socialAccountIcons = {
    twitter: <AiOutlineTwitter />
 }
 
-export const SocialAccounts = ({ social, name, icon }) => {
+export const SocialAccounts = ({ link, name, icon }) => {
    return (
 
       <div className='flex items-center gap-2 mt-4 text-gray-900 font-extrabold hover:text-gray-400'>
+         <div>
 
-         {socialAccountIcons[icon]}
+            {socialAccountIcons[icon]}
+         </div>
 
-         <a href={social}>{name}</a>
+         <a href={!link ? link : '#'}>{name}</a>
 
-      </div> 
+      </div>
    )
 
 }

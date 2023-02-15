@@ -5,7 +5,6 @@ import { Repositorio } from '../components/Repositorio'
 import { RiUserFollowLine } from 'react-icons/ri'
 import { GiShadowFollower } from 'react-icons/gi'
 import { useLocation, Link } from 'react-router-dom';
-// import { AiOutlineSearch } from 'react-icons/ai'
 
 export const Profile = () => {
 
@@ -42,11 +41,11 @@ export const Profile = () => {
 
             <hr className='bg-gray-600 mt-2' />
             <div className='conatinerSocialLinks'>
-               <SocialAccounts social={dataUser.company} name='Company' icon='organizarion' />
-               <SocialAccounts name={dataUser.location} icon='location' />
-               <SocialAccounts social={dataUser.email} name='Email' icon='email' />
-               <SocialAccounts social={dataUser.blog} name='Blog' icon='webSit' />
-               <SocialAccounts social={dataUser.twitter_username} name='Twitter' icon='twitter' />
+               <SocialAccounts name = {dataUser.company} icon= {dataUser.company != null ? 'organizarion' : null} />
+               <SocialAccounts name={dataUser.location} icon={dataUser.location != null ? 'location' : null} />
+               <SocialAccounts Link={dataUser.email} name='Email' icon='email' />
+               <SocialAccounts Link={dataUser.blog} name='Blog' icon='webSit' />
+               <SocialAccounts link ={dataUser.twitter_username} name='Twitter' icon='twitter' />
             </div>
 
             <button className="h-fit w-full p-2 mt-5 rounded-xl flex items-center justify-center gap-1 bg-gray-900 hover:bg-gray-800 hover:text-white font-black">
