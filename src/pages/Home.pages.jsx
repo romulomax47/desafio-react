@@ -7,7 +7,7 @@ export const Home = ({ handleSeachUser, handleUser, user }) => {
          {/* <h1>Seach Devs</h1> */}
 
          <div className='form'>
-            <form action="/profile" method='#' onSubmit={handleSeachUser}>
+            <form action="" onSubmit={handleSeachUser}>
 
                <h1 className='text-3xl text-center mb-7'>Seach Devs</h1>
                <div className='flex justify-center items-center gap-2 mb-7'>
@@ -24,8 +24,6 @@ export const Home = ({ handleSeachUser, handleUser, user }) => {
                         Buscar
                      </button>
                </div>
-
-
 
             </form>
          </div>
