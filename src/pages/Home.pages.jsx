@@ -1,7 +1,7 @@
 
 import { Button } from '../compontes/Button'
 
-export const Home = ({ getUserAPI, handleUser, user }) => {
+export const Home = ({ handleSeachUser, handleUser, user }) => {
 
    return (
       <div className='w-full h-screen overflow-hidden flex justify-center items-center bg-gray-500'>
@@ -20,7 +20,7 @@ export const Home = ({ getUserAPI, handleUser, user }) => {
                      placeholder='Username'
                      value={user}
                      onChange={handleUser} />
-                  <Button text='Buscar' getUserAPI={getUserAPI}></Button>
+                  <Button text='Buscar' handleSeachUser = {handleSeachUser}></Button>
                </div>
 
 

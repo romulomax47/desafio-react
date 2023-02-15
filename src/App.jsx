@@ -6,6 +6,8 @@ import { BrowserRouter, Link } from 'react-router-dom'
 import { useState } from 'react'
 //  api 
 import { getUser, getUserRepos } from './api/api.api';
+
+import order from './utils/order'
 function App() {
 
   const [user, setUser] = useState('');
@@ -13,29 +15,21 @@ function App() {
   const [repos, setRepos] = useState([]);
 
 
-  const getUserAPI = async () => {
+  const handleSeachUser = async () => {
 
     if (!user) return alert('Digite um usuario')
 
     try {
       const { data } = await getUser.get(`/${user}`)
       const response = await getUserRepos.get(`/${user}/repos`)
+      const repos = order(response.data);
 
       setDataUser(data)
-      setRepos(response.data);
-
-      console.log('data', data)
-      console.log('respos', response.data);
-
-      /// redirecionar para pagina profile;
-      <Link to='/profile'>s</Link>
-
+      setRepos(repos);
 
     } catch (error) {
-      alert('Usuario não encontrado')
+      alert('Usuário não encontrado')
     }
-
-    // return redirect("/profile");
 
   }
 
@@ -45,17 +39,14 @@ function App() {
 
   return (
 
-
-
     <BrowserRouter>
       <div className="App w-full h-full">
   
         {dataUser.length === 0 ?
           <Home 
-            getUserAPI={getUserAPI}
+            handleSeachUser={handleSeachUser}
             handleUser={handleUser}
             user={user} />
-
 
           :
           <Profile
@@ -64,8 +55,6 @@ function App() {
             value={user}
           />
         }
-
-
 
       </div>
     </BrowserRouter >
