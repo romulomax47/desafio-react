@@ -31,13 +31,13 @@ Não é necessário se preocupar com CORS ou implementar um backend para fazer a
 1° faça um clone do repositorio
 
 ````
-$ git clone 
+$ git clone https://github.com/romulomax47/desafio-react.git
 
 ````
 2° Entre no repositorio
 
 ````
-$ cd ...
+$ cd desafio-react
 
 ````
 3° Instalar as dependencies e rode o projeto
