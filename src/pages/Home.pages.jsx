@@ -3,32 +3,32 @@ import { AiOutlineSearch } from 'react-icons/ai'
 
 import { searchUser, searchUserRepos } from '../api/search';
 
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import order from '../utils/order';
 
 export const Home = () => {
 
-   const [userName, setUserName ] = useState('');
+   const [userName, setUserName] = useState('');
    const navigate = useNavigate()
-   
+
    const search = async (e) => {
       e.preventDefault()
-    if (!userName) return alert('Digite um usuario')
+      if (!userName) return alert('Digite um usuario')
 
-    try {
-      const { data } = await searchUser.get(`/${userName}`);
-      const response = await searchUserRepos.get(`/${userName}/repos`);
-      const reposUser = order(response.data);
+      try {
+         const { data } = await searchUser.get(`/${userName}`);
+         const response = await searchUserRepos.get(`/${userName}/repos`);
+         const reposUser = order(response.data);
 
-      
-      navigate('/profile', {
-         state: [data, reposUser]
-      })
 
-    } catch (error) {
-      navigate('*')
-    }
-      
+         navigate('/profile', {
+            state: [data, reposUser]
+         })
+
+      } catch (error) {
+         navigate('*')
+      }
+
    }
 
    const handleUser = (e) => {
@@ -39,24 +39,27 @@ export const Home = () => {
       <div className='w-full h-screen overflow-hidden flex justify-center items-center bg-gray-500'>
          {/* <h1>Seach Devs</h1> */}
 
-         <div className='form'>
-            
-            <form onSubmit = {search}>
+         <div className='flex justify-center mx-4'>
+
+            <form onSubmit={search} >
 
                <h1 className='text-3xl text-center mb-7'>Seach Devs</h1>
-               <div className='flex justify-center items-center gap-2 mb-7'>
+               <div className='flex-col w-full sm:flex sm:flex-row  justify-center items-center gap-2  mb-7 mx-3'>
                   <label htmlFor="Seach-Devs"></label>
 
-                  <input type="search" className='w-96 p-2 rounded-xl focus:outline-0'
+                  <input type="search" className='w-full p-2 rounded-xl focus:outline-0'
                      name="Seach-Devs"
                      id="Seach-Devs"
                      placeholder='Username'
                      value={userName}
                      onChange={handleUser} />
-                     <button  className="h-full p-2 rounded-xl flex items-center justify-center gap-1 bg-gray-700 hover:bg-gray-900 hover:text-white font-black">
-                        <AiOutlineSearch style={{fontSize:25}}/>
+                  <div className='flex justify-center item-center'>
+                     <button className="h-full  mt-5 sm:mt-0 px-3 py-2 rounded-xl flex items-center justify-center gap-1 bg-gray-700 hover:bg-gray-900 hover:text-white font-black">
+                        <AiOutlineSearch style={{ fontSize: 25 }} />
                         Buscar
                      </button>
+                  </div>
+
                </div>
 
             </form>
