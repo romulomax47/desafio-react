@@ -1,11 +1,7 @@
-import './Style.css'
 import { Home } from './pages/Home.pages'
 import { Profile } from './pages/Profile.page'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { NotFount } from './pages/NotFound'
-
-// //  api 
-
 
 function App() {
 
