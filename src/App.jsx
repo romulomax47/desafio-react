@@ -9,8 +9,6 @@ import { NotFount } from './pages/NotFound'
 
 function App() {
 
-
-
   return (
     <BrowserRouter>
       <div className="App w-full h-full">
