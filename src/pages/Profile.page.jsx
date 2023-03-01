@@ -49,7 +49,7 @@ export const Profile = () => {
             </div>
  
             <button className=" bg-gray-900 hover:bg-gray-800 hover:text-white font-black mt-4 p-2 rounded-md">
-               <Link to='/home'>VOLTAR</Link>
+               <Link to='/'>VOLTAR</Link>
             </button>
 
          </aside>
@@ -64,7 +64,7 @@ export const Profile = () => {
 
             <div className=' bg-gray-500 absolute bottom-0 w-full text-center md:hidden py-3'>
                <button className="h-fit  py-3 px-6 text-white  rounded-xl mb-4 bg-gray-900 hover:bg-gray-800 hover:text-white font-black">
-                  <Link to='/home'>VOLTAR</Link>
+                  <Link to='/'>VOLTAR</Link>
                </button>
             </div>
 
