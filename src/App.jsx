@@ -1,5 +1,5 @@
-import { Home } from './pages/Home.pages'
-import { Profile } from './pages/Profile.page'
+import { Home } from './pages/HomePage'
+import { Profile } from './pages/ProfilePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { NotFount } from './pages/NotFound'
 import './style.css';

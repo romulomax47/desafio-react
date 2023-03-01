@@ -1,6 +1,6 @@
 
 import { SocialAccounts } from '../components/SocialAccount';
-import { Repositorio } from '../components/Repositorio'
+import { Repositorio } from '../components/RepositoryCard'
 /// icons 
 import { RiUserFollowLine } from 'react-icons/ri'
 import { GiShadowFollower } from 'react-icons/gi'

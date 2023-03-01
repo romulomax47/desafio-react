@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
-
 import { searchUser, searchUserRepos } from '../api/search';
-
 import { useNavigate } from 'react-router-dom';
 import order from '../utils/order';
+
 
 export const Home = () => {
 
@@ -43,7 +42,7 @@ export const Home = () => {
 
             <form onSubmit={search} >
 
-               <h1 className='text-3xl text-center mb-7'>Seach Devs</h1>
+               <h1 className='text-3xl text-center mb-7'>Search Devs</h1>
                <div className='flex-col w-full sm:flex sm:flex-row  justify-center items-center gap-2  mb-7 mx-3'>
                   <label htmlFor="Seach-Devs"></label>
 
