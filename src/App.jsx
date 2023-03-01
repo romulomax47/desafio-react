@@ -2,6 +2,7 @@ import { Home } from './pages/Home.pages'
 import { Profile } from './pages/Profile.page'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { NotFount } from './pages/NotFound'
+import './style.css';
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div className="App w-full h-full">
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='*' element={<NotFount />} />
         </Routes>
