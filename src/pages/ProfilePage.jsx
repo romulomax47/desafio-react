@@ -41,9 +41,9 @@ export const Profile = () => {
 
             <hr className='bg-gray-600 mt-2' />
             <div className='conatinerSocialLinks'>
-               <SocialAccounts name={dataUser.company} icon={dataUser.company != null ? 'organizarion' : null} />
-               <SocialAccounts name={dataUser.location} icon={dataUser.location != null ? 'location' : null} />
-               <SocialAccounts Link={dataUser.email} name='Email' icon='email' />
+               <SocialAccounts name= {dataUser.company} icon={dataUser.company != null ? 'organizarion' : null} />
+               <SocialAccounts name= {dataUser.location} icon={dataUser.location != null ? 'location' : null} />
+               <SocialAccounts Link={!dataUser.email ? dataUser.email : null} name='Email' icon='email' />
                <SocialAccounts Link={dataUser.blog} name='Blog' icon='webSit' />
                <SocialAccounts link={dataUser.twitter_username} name='Twitter' icon='twitter' />
             </div>
